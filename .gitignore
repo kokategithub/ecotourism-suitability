@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Secrets — NEVER commit these
+.env
+service-account.json
+*.json.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Large model files — store separately (too big for GitHub)
+backend/model/*.pth
+backend/model/*.pkl
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

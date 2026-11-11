@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  min-height: 100svh;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  font-family: 'Inter', sans-serif;
+  border-radius: 1rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* ── Dark mode ── */
+html.dark body {
+  background-color: #0d1117;
+  color: #e5e7eb;
+}
+
+html.dark #root {
+  background-color: #0d1117;
+}
+
+/* Page backgrounds */
+html.dark .page-bg {
+  background: #0d1117 !important;
+}
+
+/* White cards → dark cards */
+html.dark [style*="background: #fff"],
+html.dark [style*="background: #ffffff"],
+html.dark [style*="background: rgb(255, 255, 255)"] {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+  color: #e5e7eb !important;
+}
+
+/* Light grey page backgrounds */
+html.dark [style*="background: #f3f4f6"],
+html.dark [style*="background: #f9fafb"],
+html.dark [style*="background: #fafafa"] {
+  background: #0d1117 !important;
+}
+
+/* Text colours */
+html.dark [style*="color: #111827"],
+html.dark [style*="color: #374151"],
+html.dark [style*="color: #1f2937"] {
+  color: #e5e7eb !important;
+}
+
+html.dark [style*="color: #6b7280"],
+html.dark [style*="color: #9ca3af"] {
+  color: #8b949e !important;
+}
+
+/* Border colours */
+html.dark [style*="border: 1px solid #e5e7eb"],
+html.dark [style*="border: 1.5px solid #e5e7eb"] {
+  border-color: #30363d !important;
+}
+
+/* Scrollbar in dark mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+/* Segmentation overlay — crisp pixel rendering, no blurry upscale */
+.seg-overlay-256 img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
